@@ -1,33 +1,10 @@
 {
-  "name": "matrix-discord-parser",
-  "version": "0.1.9",
-  "description": "A bridge between Matrix and Discord",
-  "main": "./lib/src/index.js",
-  "scripts": {
-    "prepublishOnly": "npm run build",
-    "test": "npm run-script build && mocha",
-    "lint": "tslint --project ./tsconfig.json -t stylish",
-    "coverage": "tsc && nyc mocha",
-    "build": "tsc"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/matrix-discord/matrix-discord-parser.git"
-  },
-  "keywords": [],
-  "author": "matrix-discord",
-  "license": "Apache-2.0",
-  "bugs": {
-    "url": "https://github.com/matrix-discord/matrix-discord-parser/issues"
-  },
-  "homepage": "https://github.com/matrix-discord/matrix-discord-parser#readme",
-  "dependencies": {
-    "discord-markdown": "git://github.com/Sorunome/discord-markdown.git#d710d3b1ee189193636e1d37cda281a60f5fc849",
-    "escape-html": "^1.0.3",
-    "got": "^11.6.0",
-    "highlight.js": "^10.4.1",
-    "node-html-parser": "^1.4.5",
-    "unescape-html": "^1.1.0"
+  "name": "@deurstann/matrix-discord-parser",
+  "version": "1.10.1",
+  "description": "A fork from @mx-puppet/matrix-discord-parser where a bug involving escaped html characters from their irc-matrix-bridge was fixed.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
   },
   "devDependencies": {
     "@istanbuljs/nyc-config-typescript": "^1.0.1",
@@ -45,6 +22,27 @@
     "typescript": "^3.8.3",
     "why-is-node-running": "^2.1.2"
   },
+  "dependencies": {
+    "discord-markdown": "git://github.com/Sorunome/discord-markdown.git#d710d3b1ee189193636e1d37cda281a60f5fc849",
+    "escape-html": "^1.0.3",
+    "got": "^11.6.0",
+    "highlight.js": "^10.4.1",
+    "node-html-parser": "^1.4.5",
+    "unescape-html": "^1.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Deurstann/matrix-discord-parser.git"
+  },
+  "author": "Deurstann",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Deurstann/matrix-discord-parser/issues"
+  },
+  "homepage": "https://github.com/Deurstann/matrix-discord-parser#readme",
   "files": [
     "src/*",
     "lib/*"
