@@ -77,6 +77,12 @@ export class MatrixMessageParser {
             // tslint:disable-next-line no-any
             } as any);
             reply = await this.walkNode(opts, parsed);
+            const escapeChars: [RegExp, string][] = [
+                [/&gt;/g, '>'], [/&lt;/g, '<'], [/&quot;/g, '"'], [/&amp;/g, '&']
+            ];
+            escapeChars.forEach(function(escapeSet) {
+                reply = reply.replace(escapeSet[0], escapeSet[1]);
+            });
             reply = reply.replace(/\s*$/, ""); // trim off whitespace at end
         } else {
             reply = await this.escapeDiscord(opts, msg.body);
