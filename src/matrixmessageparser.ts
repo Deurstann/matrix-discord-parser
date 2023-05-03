@@ -78,7 +78,7 @@ export class MatrixMessageParser {
             } as any);
             reply = await this.walkNode(opts, parsed);
             const escapeChars: [RegExp, string][] = [
-                [/&gt;/g, '>'], [/&lt;/g, '<'], [/&quot;/g, '"'], [/&amp;/g, '&']
+                [/&gt;/g, '>'], [/&lt;/g, '<'], [/&quot;/g, '"'], [/&amp;/g, '&'], [/@apos;/g, "'"], [/&#x27;/g,"'"], [/&#x2F;/g, "/"]
             ];
             escapeChars.forEach(function(escapeSet) {
                 reply = reply.replace(escapeSet[0], escapeSet[1]);
